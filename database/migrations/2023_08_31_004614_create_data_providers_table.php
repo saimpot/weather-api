@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::create('data_providers', static function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignIdFor('services', 'service_id');
+            $table->foreignId('service_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

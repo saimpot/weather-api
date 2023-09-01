@@ -10,7 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('weather_data_type', static function (Blueprint $table) {
+        Schema::create('weather_data_types', static function (Blueprint $table) {
             $table->id();
             $table->string('type');
 

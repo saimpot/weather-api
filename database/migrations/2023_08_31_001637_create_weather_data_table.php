@@ -12,8 +12,8 @@ return new class extends Migration {
     {
         Schema::create('weather_data', static function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor('location', 'location_id');
-            $table->foreignIdFor('weather_data_type', 'type_id');
+            $table->foreignId('location_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('weather_data_type_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('value');
 
             $table->timestamp('created_at')->useCurrent();
