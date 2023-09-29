@@ -4,9 +4,14 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use WeatherApi\Core\Weather\Presentation\Cli\Location\Write\CreateLocationConsoleCommand;
 
 class Kernel extends ConsoleKernel
 {
+    protected $commands = [
+        CreateLocationConsoleCommand::class,
+    ];
+
     /**
      * Define the application's command schedule.
      */
